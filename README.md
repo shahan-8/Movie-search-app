@@ -1,16 +1,82 @@
-# React + Vite
+# Movie Search App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A movie search application built with React. Search for a movie title, retrieve matching results from a movie data API, and display the results in a reusable movie list.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Search movies by title
+- Fetch search results asynchronously
+- Display matching movies in a list
+- Show a friendly message when no movies are found
+- Separate search form and movie-list components
+- API request logic kept in a dedicated module
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- JavaScript (JSX)
+- Vite
+- External movie search API
 
-## Expanding the Oxlint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Prerequisites
+
+- Node.js (LTS recommended)
+- npm
+
+### Installation
+
+```bash
+git clone https://github.com/shahan-8/Movie-search-app.git
+cd Movie-search-app
+npm install
+npm run dev
+```
+
+Open the local URL printed by Vite.
+
+## API Configuration
+
+The app uses the movie search function in `src/api.js`. Check that file for the API provider and required key configuration before running the application. If the provider requires a private API key, store it in a local environment file and configure it in your deployment environment. Do not commit private keys.
+
+## Production Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Available Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Build the production app |
+| `npm run lint` | Run Oxlint |
+| `npm run preview` | Preview the production build |
+
+## Project Structure
+
+```text
+Movie-search-app/
+├── src/
+│   ├── components/   # Search form and movie list components
+│   ├── api.js        # Movie search request
+│   ├── App.jsx       # Search state and app composition
+│   └── main.jsx      # React entry point
+├── public/
+└── package.json
+```
+
+## What This Project Practices
+
+- React component composition
+- State management with `useState`
+- Passing callbacks through props
+- Async/await and API requests
+- Conditional rendering and empty states
+
+## Author
+
+Built by [Shahan](https://github.com/shahan-8).
